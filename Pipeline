@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    tools {nodejs "NODE"}
+    stages {
+        
+        stage('source') {
+            steps {
+                git credentialsId: 'master-privatekey', url: 'git@github.com:sania-kurup/PROJECT.git'
+                sh '''cat demoproject'''
+            }
+        }
+
+    }
+}
+
